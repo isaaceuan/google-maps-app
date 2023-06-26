@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+// app.component.ts
+import { Component, ElementRef, NgZone, ViewChild } from '@angular/core';
+import { GoogleMap } from '@angular/google-maps';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'google-maps-app';
+  public title:string = 'google-maps-app'
 }

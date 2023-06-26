@@ -1,0 +1,21 @@
+.small-text{
+    font-size: 14px;
+}
+.search-form{
+    background: #e7e7e7;
+    height: 350px;
+}
+label{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 10px;
+}
+.search-btn{
+    background: #fff;
+    color: #000;
+    border: 1px #c9c9c9 solid;
+}
+
+.search-imput{
+    background: #ffffe1;;
+}

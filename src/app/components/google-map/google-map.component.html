@@ -1,0 +1,75 @@
+<div class="fuid-container">
+  <div class="container">
+    <div class="col-lg-6 col-md-8 col-sm-12 mb-4 mt-4">
+      <label for="exampleInputEmail1" class="form-label">Dirección</label>
+      <div class="input-group flex-nowrap">
+        <input
+          #search
+          (keydown.enter)="$event.preventDefault()"
+          type="text"
+          class="form-control my-search-box"
+          placeholder="Buscar ubicación en Google Maps"
+          aria-label="Dirección"
+          aria-describedby="addon-wrapping"
+        />
+        <span class="input-group-text" id="addon-wrapping"
+          ><i class="bi bi-geo-alt"></i
+        ></span>
+      </div>
+      <p class="small-text">
+        Si la ubicación de su propiedad no se muestra correctamente en el mapa,
+        puede arrastar el marcador hasta la ubicación deseada
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-8 col-sm-12">
+        <google-map
+          #myGoogleMap
+          height="400px"
+          width="100%"
+          [zoom]="zoom"
+          [center]="center"
+        >
+          <map-marker
+            (mapDragend)="markerDragEnd($event)"
+            [options]="markerOptions"
+            [position]="markerPosition"
+          >
+          </map-marker>
+        </google-map>
+      </div>
+      <div class="col-lg-3 col-md-8 col-sm-12 search-form">
+        <!-- <p>Latitud: {{ latitude}}</p>
+      <p>Longitud: {{ longitude}}</p> -->
+        <p>
+          Ingrese la latitud y la lognitud correcta para actualizar la ubicación
+          de su propiedad
+        </p>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Latitud</label>
+          <input
+            #lat
+            type="text"
+            class="form-control search-imput"
+            [ngModel]="latitude"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Longitud</label>
+          <input
+            #lng
+            type="text"
+            class="form-control search-imput"
+            [ngModel]="longitude"
+          />
+        </div>
+        <button
+          (click)="searchByCords(lat.value, lng.value)"
+          class="btn search-btn"
+        >
+          Ubicar y centrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
